@@ -1,0 +1,32 @@
+
+
+body{
+    padding:20px;
+    font-family: 'Courier New', Courier, monospace;
+    color:green;
+    background-color: black;
+}
+a{
+    color:green;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+}
+.counter{
+    margin:10px;
+    border:solid black;
+    display:flex;
+    justify-content: center;
+}
+
+.buttons{
+    border:solid black;
+    display:flex;
+    justify-content: space-around;
+    }
+.addTwo{
+    display:flex;
+    justify-content: center;
+}
