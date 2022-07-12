@@ -4,12 +4,98 @@
     box-sizing:border-box ;
 }
 
+.tableMain{
+    display:flex;
+    justify-content: center;
+}
+
+body{
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 h1{
     display:flex ;
     justify-content: center;
 }
 
-.tableMain{
+.makeDojoTitle{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 35pt;
+    font-weight: 70;
+    color:black;
+    margin:10px;    
+    background-color: blanchedalmond;
+    width:550px;
+    height:30px;
+
+}
+.showDojosLink{
+    font-family:'Courier New', Courier, monospace;
+    color:black;
+
+}
+label{
+    font-family:'Courier New', Courier, monospace;
+    font-size: 25pt;
+    color:black;
+    margin:20px;
+}
+
+input{
+    margin:15px;
+    height:35px;
+    width:150px;
+    border:solid .5pt black;
+    border-radius: 2pt;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14pt;
+}
+.createDojoButton{
+    width:150px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16pt;
+    color:black;
+    background-color: white;
+    border-style:solid .5pt, black;
+    border-radius: 2pt;
+    margin:30px;
+}
+.form0{
+    padding-top: 30px;
+    margin:30px; 
+    background-color: blanchedalmond;
+    border-radius: 2pt;
+    height:300px;
+    width:250px;
     display:flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.container{
+    height:600px;
+    width:90%;
+
+    border: solid 3pt black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+}
+
+.container0{
+
+    border: solid 3pt cornflowerblue;
+    height:600px;
+    width:40%;
+
+    border: solid 3pt cornflowerblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
