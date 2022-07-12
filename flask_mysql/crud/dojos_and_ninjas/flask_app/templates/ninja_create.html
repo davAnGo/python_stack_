@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Creator</title>
+</head>
+<body>
+    <h1>Input Ninja Details</h1>
+
+    <form action="/create/ninja" method="POST">
+
+        <label for="name">First Name: </label>
+        <input type="text" name="first_name">
+        
+        <label for="name">Last Name: </label>
+        <input type="text" name="last_name">
+        
+        <label for="age">Age: </label>
+        <input type="text" name="age">
+
+        <label for="dojos_id">Dojo: </label>
+        <select name="dojos_id">
+            {%for dojo in dojos%}
+            <option value="{{dojo.id}}">{{dojo.name}}</option>
+            {%endfor%}
+        </select>
+
+        <input type="submit" value="Add Ninja">
+    </form>
+</body>
+</html>
