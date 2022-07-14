@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission Results</title>
+</head>
+<body>
+    <div class="infoCard">
+        <div class="greeting">
+            <h1>Welcome, {{survey.name}}!</h1>
+        </div>
+        <div class="info">
+            <div class="location">
+                <p>Location: {{survey.location}}</p>
+            </div>
+            <div class="language">
+                <p>Favorite Language: {{survey.fav_lang}}</p>
+            </div>
+            <div class="comments">
+                <p>Comments: {{survey.comments}}</p>
+            </div>        
+        </div>
+
+    </div>
+</body>
+</html>
