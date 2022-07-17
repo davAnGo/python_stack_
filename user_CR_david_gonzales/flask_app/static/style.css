@@ -1,0 +1,31 @@
+h1{
+    display: flex;
+    justify-content: center;
+}
+
+table{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    border:solid black;
+}
+thead{
+    width: 100%;
+    display:flex;
+    justify-content: space-evenly;
+}
+.header{
+    margin-left:10px;
+    margin-right:10px;
+}
+tr{
+    display:flex;
+    width: 500px;
+
+}
+
+td{
+    margin:0px 10px 10px 0px;
+    
+}
