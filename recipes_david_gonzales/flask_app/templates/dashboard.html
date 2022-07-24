@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="headerDash">
+        <h1>Welcome {{user.first_name}}!</h1>
+    </div>
+    <div class="nav">
+        <div class="navLeft">
+            <p>All posted recipes</p>
+        </div>
+        <div class="navRight">
+            <a href="add/recipe">Add New Recipe</a>
+            <form action="/logout/user" method='POST'>
+                <input class="logout" type="submit" name="Logout" value="Logout">
+            </form>
+        </div>
+    </div>
+    <div class="recipeContainer">
+        <table class="recipes">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Under</th>
+                    <th>Original Poster</th>
+                    <th>Interactions</th>
+                </tr>
+            </thead>
+            <tbody>
+            <!-- for loop for making the right amount of rows to recipes  -->
+                {%for recipe in recipes %}
+                <tr>
+                    <td>{{recipe.name}}</td>
+                    {% if recipe.thirty_min_or_less == 1 %}
+                        <td>Yes</td>
+                    {%else%}
+                        <td>No</td>
+                    {%endif%}
+                    <td>{{recipe.user.first_name}} {{recipe.user.last_name}}</td>
+                    <td>
+                        <a href="/recipe/{{recipe.id}}">View</a>
+                        {%if session['user_id'] == recipe.user.id %}
+                        <a href="/edit/recipe/{{recipe.id}}">Edit</a>
+                        <a href="/recipe/delete/{{recipe.id}}">Delete</a>
+                        {%endif%}
+                    </td>
+                </tr>
+                {%endfor%}
+            </tbody>
+                <!-- nested for loop for putting the data of each recipe into the rows... maybe -->
+            
+        </table>
+    </div>
+</body>
+</html>

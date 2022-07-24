@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Register</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="dashTitle">Welcome to Recipe Share </h1>
+            <h2>Please register or login to proceed.</h2>
+                <div class="flash">
+                    {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+                        {% if messages %}                            <!-- check if there are any messages -->
+                            {% for message in messages %}            <!-- loop through the messages -->
+                                <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </div>
+        </div>
+        <div class="mainBody">
+            <div class="bodyLeft">
+                <div class="titleLeft">
+                    <h2>Register</h2>
+                </div>
+                    <form class="formLeft" action="/register" method="POST">
+                        <label for="first_name">First Name</label>
+                        <input type="text" name="first_name"><br>
+                        <label for="last_name">Last Name</label>
+                        <input type="text" name="last_name"><br>
+                        <label for="email">Email</label>
+                        <input type="text" name="email"><br>
+                        <label for="password"> Password</label>
+                        <input type="password" name="password"><br>
+                        <label for="confirm">Confirm password</label>
+                        <input type="password" name="confirm"><br>
+                        <input class="logout" type="submit" value="Submit">
+                    </form>
+            </div>
+            <div class="bodyRight">
+                <div class="titleRight">
+                    <h2>Log In</h2>
+                </div>
+                    <form class="formRight" action="/login" method='POST'>
+                        <label for="email">Email</label>
+                        <input type="text" name="email"><br>
+                        <label for="password">Password</label>
+                        <input type="password" name="password"><br>
+                        <input class="logout" type="submit" name="Submit">
+                    </form>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</body>
+</html>

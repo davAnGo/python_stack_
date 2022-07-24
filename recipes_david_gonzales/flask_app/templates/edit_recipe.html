@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor</title>
+</head>
+<body>
+    <h1 class="addPage">Edit {{this_recipe.name}}!</h1>
+    <!-- add your flash messages -->
+    <div class="navAdd">
+        <div class="navRight">
+            <a href="/dashboard">Recipes</a>
+            <form action="/logout/user" method='POST'>
+                <input class="logout" type="submit" name="Logout" value="Logout">
+            </form>
+        </div>
+    </div>
+    <div class="flash">
+        {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+            {% if messages %}                            <!-- check if there are any messages -->
+                {% for message in messages %}            <!-- loop through the messages -->
+                    <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+    <div class="formBody">
+        <div class="addPageContainerLeft">
+            <form class="addForm" action="/edit/recipe/{{this_recipe.id}}" method="POST">
+                <label for="name" value="name">Name</label>
+                <input type="text" name="name" value="{{this_recipe.name}}">
+                <label for="description" name="description" >Description</label>
+                <textarea name="description" rows="4" cols="20" >{{this_recipe.description}}</textarea>
+                <label for="instructions" name="instructions">Instructions</label>
+                <textarea name="instructions" rows="4" cols="20">{{this_recipe.instructions}}</textarea>
+        </div>
+        <div class="addPageContainerRight">
+                <label for="date_cooked">Date Cooked:</label>
+                <input type="date" name="date_cooked" value="{{this_recipe.date_cooked}}">
+                <p>Thirty Minutes or Less?</p>
+                <input type="radio" name="thirty_min_or_less" value="1">
+                <label for="1">Yes</label><br>
+                <input type="radio" name="thirty_min_or_less" value="0">
+                <label for="no">No</label><br>
+                <input type="submit" name="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

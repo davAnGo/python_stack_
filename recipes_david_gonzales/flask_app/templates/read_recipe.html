@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{this_recipe.name}}</title>
+</head>
+<body>
+    <div class="nav">
+        <h1>Welcome, {{this_recipe.user.first_name}}</h1> 
+            
+        <div class="navRight"> <a href="/dashboard">Recipes</a>
+            <form action="/logout/user" method='POST'>
+                <input class="logout" type="submit" name="Logout" value="Logout">
+            </form>
+        </div>
+    </div>
+    <div class="titleAndUser">
+        <p>{{this_recipe.name}}</p>
+        <h2>posted by {{this_recipe.user.first_name}} {{this_recipe.user.last_name}}</h2>
+    </div> 
+    <div class="cardContainer">
+        <div class="recipe_card">
+            <div class="recipeLeft">
+                <p class="readPage">Description:</p>
+                <p class="readPage">Instructions:</p>
+                <p class="readPage">Date Cooked:</p>
+                <p class="readPage">Under 30 minutes?</p>
+            </div>
+
+            <div class="recipeRight">
+                <p class="readPage">{{this_recipe.description}}</p>
+                {% if this_recipe.thirty_min_or_less == 1 %}
+                            <p>Yes</p>
+                        {%else%}
+                            <p>No</p>
+                {%endif%}
+                <p class="readPage">{{this_recipe.instructions}}</p>
+                <p class="readPage">{{this_recipe.date_cooked}}</p>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
