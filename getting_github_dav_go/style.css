@@ -1,0 +1,23 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+.container{
+    border:solid;
+
+    padding:20px;
+}
+
+p{
+    margin:5px;
+}
+
+.userInfo{
+    display: flex;
+}
+
+.profilePic{
+    display:none;
+}
