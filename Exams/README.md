@@ -1,0 +1,1 @@
+# Welcome, this repo is only private due to its contents being past exams from Coding Dojo Bootcamp. Please inspect these projects to your hearts content but I do ask that you do not share this code with anyone not also apart of this repo. Thank you.  
